@@ -1,0 +1,29 @@
+[
+  {
+    "name": "check",
+    "description": "Read-only quality gates \u2014 Pint style check + PHPStan level 6, grouped report"
+  }
+]
+--- file ---
+---
+description: Read-only quality gates — Pint style check + PHPStan level 6, grouped report
+---
+
+Run this repo's two read-only quality gates and report findings. **Modify nothing.** No auto-fixing, no `--generate-baseline`, never run `pint` without `--test`.
+
+1. **Style** — `vendor/bin/pint --test --format agent`
+2. **Types** — `composer phpstan`
+
+Scope: `$ARGUMENTS`
+
+- Empty → run both over the whole project.
+- Paths given (e.g. `app/Models app/Support`) → pass them to Pint only (`vendor/bin/pint --test --format agent app/Models app/Support`); PHPStan always runs whole-project because its baseline is line-keyed.
+
+Report:
+
+- One finding per line: `path:line` — the rule or message, then the fix in a single clause.
+- Group by file, most severe first.
+- Clean gate → print exactly `Pint: clean` and/or `PHPStan: clean`. Do not invent findings to fill the report.
+- A PHPStan error already covered by `phpstan-baseline.neon` is not new — label it `baseline-covered` and keep it out of the headline count.
+- A PHPStan failure whose only errors are `ignore.unmatched` ("Ignored error pattern … was not matched") is a **stale baseline entry**, not broken code. Label each one `baseline-stale: <file>`, do not regenerate the baseline, and do not count it as a code defect.
+- Finish with a one-line verdict: `ship`, `fix first`, or `blockers`. Then stop; fixes are a separate request.

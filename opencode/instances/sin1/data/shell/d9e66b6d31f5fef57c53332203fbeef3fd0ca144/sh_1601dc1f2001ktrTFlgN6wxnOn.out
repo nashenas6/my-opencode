@@ -1,0 +1,9 @@
+         /home/runner/h-dashboard/database/seeders/HardwareHistorySeeder.php  
+         was not matched in reported errors.                                  
+         🪪  ignore.unmatched (non-ignorable)                                 
+ ------ --------------------------------------------------------------------- 
+
+ [ERROR] Found 2 errors                                                         
+
+Script phpstan analyse --no-progress handling the phpstan event returned with error code 1
+exit=1

@@ -1,0 +1,4 @@
+{"location":{"directory":"/home/runner"},"data":[]}
+
+--- reload then retry ---
+{"location":{"directory":"/home/runner"},"data":[{"name":"init","description":"guided AGENTS.md setup"},{"name":"review","description":"review changes [commit|branch|pr], defaults to uncommitted"},{"name":"codebase-memory-mcp:explore_codebase","description":"Explore a codebase with graph-first structural discovery."},{"name":"codebase-memory-mcp:review_change_impact","description":"Review affected callers, tests, boundaries, and risks."},{"name":"laravel-boost:laravel-code-simplifier","description":"Simplifies and refines PHP/Laravel code for clarity, consistency, and maintainability while pre

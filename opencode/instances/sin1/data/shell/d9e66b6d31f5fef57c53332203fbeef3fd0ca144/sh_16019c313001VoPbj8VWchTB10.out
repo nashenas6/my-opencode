@@ -1,0 +1,14 @@
+PATH=/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+total 8
+drwxr-xr-x 2 runner runner 4096 Oct 21 20:14 .
+drwxr-xr-x 4 runner runner 4096 Oct 21 20:00 ..
+lrwxrwxrwx 1 runner runner   34 Oct 21 20:03 9router -> ../lib/node_modules/9router/cli.js
+lrwxrwxrwx 1 runner runner   55 Oct 21 20:00 codegraph -> ../lib/node_modules/@colbymchenry/codegraph/npm-shim.js
+lrwxrwxrwx 1 runner runner   52 Oct 21 20:14 intelephense -> ../lib/node_modules/intelephense/lib/intelephense.js
+lrwxrwxrwx 1 runner runner   50 Oct 21 20:03 opencode -> ../lib/node_modules/@opencode/cli/bin/opencode.exe
+lrwxrwxrwx 1 runner runner   50 Oct 21 20:03 opencode2 -> ../lib/node_modules/@opencode/cli/bin/opencode.exe
+Unknown command: "bin"
+
+To see a list of supported npm commands, run:
+  npm help
+/home/runner/.npm-global

@@ -1,0 +1,27 @@
+JSON OK
+      "lsp": {
+        "intelephense": {
+          "command": [
+            "intelephense",
+            "--stdio"
+          ],
+          "extensions": [
+            ".php"
+          ],
+          "initialization": {
+            "storagePath": "/tmp/opencode/intelephense-storage",
+            "clearCache": false,
+            "intelephense": {
+              "environment": {
+                "phpVersion": "8.5.0",
+                "includePaths": [
+                  "vendor"
+                ]
+              },
+              "files": {
+                "maxSize": 5000000
+              }
+            }
+          }
+        }
+      },

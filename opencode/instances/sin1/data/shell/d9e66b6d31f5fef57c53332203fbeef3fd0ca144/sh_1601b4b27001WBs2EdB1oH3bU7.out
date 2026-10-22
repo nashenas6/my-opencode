@@ -1,0 +1,5 @@
+publishDiagnostics           0
+textDocument/definition      0
+workspace/executeCommand     0
+LSP                          9
+language-server              2

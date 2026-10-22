@@ -1,0 +1,17 @@
+['/tmp/opencode/lsp-wrapper.sh', '--stdio']
+run exit=0
+--- wrapper calls ---
+(wrapper never invoked)
+--- demo.php ---
+--- a/demo.orig.php
++++ b/demo.php
+@@ -13,4 +13,9 @@ class Greeter
+     {
+         return "Goodbye, {$name}";
+     }
++
++    public function title(): string
++    {
++        return 'X';
++    }
+ }

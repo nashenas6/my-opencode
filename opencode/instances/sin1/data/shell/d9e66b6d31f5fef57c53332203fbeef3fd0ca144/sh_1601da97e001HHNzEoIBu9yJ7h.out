@@ -1,0 +1,52 @@
+{
+  "get": {
+    "tags": [
+      "command"
+    ],
+    "operationId": "command.list",
+    "parameters": [
+      {
+        "name": "location",
+        "in": "query",
+        "schema": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "directory": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "additionalProperties": false
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "required": false,
+        "style": "deepObject",
+        "explode": true
+      }
+    ],
+    "security": [],
+    "responses": {
+      "200": {
+        "description": "Success",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "location": {
+                  "$ref": "#/components/schemas/Location.PublicRef"
+                },
+                "data": {
+                  "type": "array"

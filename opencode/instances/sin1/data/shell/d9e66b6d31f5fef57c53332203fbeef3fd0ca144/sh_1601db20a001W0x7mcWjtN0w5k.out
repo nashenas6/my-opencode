@@ -1,0 +1,3 @@
+location: {'directory': '/home/runner/h-dashboard'}
+check discovered: True
+sample: ['init', 'review', 'deepwork', 'reflect', 'loop', 'interview', 'implement', 'check']

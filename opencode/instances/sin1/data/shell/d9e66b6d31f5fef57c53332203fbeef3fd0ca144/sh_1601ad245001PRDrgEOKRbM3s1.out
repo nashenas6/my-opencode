@@ -1,0 +1,5 @@
+grep: run.log: binary file matches
+--- exit/result ---
+timestamp=2026-10-21T20:15:31.178Z level=INFO run=33c0f461 message="watcher stopped" path=/tmp/opencode/lsptest type=entries http.span=5205 role=server
+timestamp=2026-10-21T20:15:31.178Z level=INFO run=33c0f461 message="watcher stopped" path=/home/runner type=entries http.span=5205 role=server
+timestamp=2026-10-21T20:15:31.179Z level=INFO run=33c0f461 message="watcher stopped" path=/home/runner/.config/opencode type=directory http.span=5206 role=server

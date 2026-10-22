@@ -1,0 +1,8 @@
+npm warn deprecated @opentelemetry/sdk-trace-base@2.12.0: Use @opentelemetry/sdk-trace package
+npm warn deprecated @opentelemetry/sdk-trace-web@2.12.0: Use @opentelemetry/sdk-trace package
+npm warn deprecated @opentelemetry/sdk-trace-base@1.30.1: Use @opentelemetry/sdk-trace package
+
+added 127 packages in 7s
+
+15 packages are looking for funding
+  run `npm fund` for details

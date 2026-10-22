@@ -1,0 +1,4 @@
+LSP spawned after ~1s:
+29204 /bin/bash -c cd /tmp/opencode/lsptest && (timeout 100 opencode run --standalone --auto "Add a farewell(string \$name): string method to demo.php that returns a goodbye message." >run.log 2>&1 & echo $! >run.pid) FOUND=no for i in $(seq 1 60); do   if pgrep -af "intelephense --stdio" >/tmp/opencode/lsp-pgrep.txt 2>/dev/null; then FOUND=yes; echo "LSP spawned after ~${i}s:"; cat /tmp/opencode/lsp-pgrep.txt; break; fi   sleep 1 done echo "found=$FOUND" wait $(cat run.pid) 2>/dev/null; echo "--- opencode output ---"; tail -5 run.log
+found=yes
+--- opencode output ---

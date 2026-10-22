@@ -1,0 +1,29 @@
+opencode.json.bak.1792613653
+comparing against opencode.json.bak.1792613653
+3a4,29
+>   "lsp": {
+>     "intelephense": {
+>       "command": [
+>         "/tmp/opencode/lsp-wrapper.sh",
+>         "--stdio"
+>       ],
+>       "extensions": [
+>         ".php"
+>       ],
+>       "initialization": {
+>         "clearCache": false,
+>         "intelephense": {
+>           "environment": {
+>             "includePaths": [
+>               "vendor"
+>             ],
+>             "phpVersion": "8.5.0"
+>           },
+>           "files": {
+>             "maxSize": 5000000
+>           }
+>         },
+>         "storagePath": "/tmp/opencode/intelephense-storage"
+>       }
+>     }
+>   },

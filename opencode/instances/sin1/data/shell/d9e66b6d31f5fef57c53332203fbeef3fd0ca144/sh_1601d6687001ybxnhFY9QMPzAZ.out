@@ -1,0 +1,4 @@
+pint => pint --dirty --format agent
+phpstan => phpstan analyse --no-progress
+test => ['Composer\\Config::disableProcessTimeout', 'php scripts/ensure-test-app-key.php && php artisan config:clear && php artisan route:clear && XDEBUG_MODE=off php artisan test']
+verify => ['Composer\\Config::disableProcessTimeout', '@php -r "file_exists(\'.env\') || exit(1);"', 'bash scripts/verify.sh']

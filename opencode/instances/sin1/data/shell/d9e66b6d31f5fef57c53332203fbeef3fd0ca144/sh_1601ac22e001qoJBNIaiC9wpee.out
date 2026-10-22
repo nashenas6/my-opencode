@@ -1,0 +1,25 @@
+--- run.log ---
+timestamp=2026-10-21T20:15:27.669Z level=INFO run=33c0f461 message="mcp connected" server=codebase-memory-mcp tools=17 http.span=1696 role=server server=codebase-memory-mcp directory=/tmp/opencode/lsptest connectionID=c4522647-0cc6-45ef-8d12-4c8da51df9d1
+timestamp=2026-10-21T20:15:27.692Z level=INFO run=33c0f461 message=event event.id=evt_1601abdcc002R5KIdlj4n1cbWI event.created=1792613727692 event.type=command.updated event.location.directory=/tmp/opencode/lsptest event.location.workspaceID=undefined event.data={}
+timestamp=2026-10-21T20:15:27.732Z level=INFO run=33c0f461 message="mcp connected" server=codegraph tools=1 http.span=1759 role=server server=codegraph directory=/tmp/opencode/lsptest connectionID=94e8d5ed-beba-44fd-848b-d842ba0ca6e5
+timestamp=2026-10-21T20:15:27.737Z level=INFO run=33c0f461 message=event event.id=evt_1601abdf9002rZFROGNsROcKYj event.created=1792613727737 event.type=command.updated event.location.directory=/tmp/opencode/lsptest event.location.workspaceID=undefined event.data={}
+timestamp=2026-10-21T20:15:27.749Z level=INFO run=33c0f461 message="mcp connected" server=context7 tools=2 http.span=1776 role=server server=context7 directory=/tmp/opencode/lsptest connectionID=da1855d1-ba2a-4ae2-9758-e290c7972d85
+timestamp=2026-10-21T20:15:27.814Z level=INFO run=33c0f461 message=event event.id=evt_1601abe46002wWayzJsDGiL1EZ event.created=1792613727814 event.type=command.updated event.location.directory=/tmp/opencode/lsptest event.location.workspaceID=undefined event.data={}
+timestamp=2026-10-21T20:15:27.888Z level=INFO run=33c0f461 message="mcp connected" server=laravel-boost tools=10 http.span=1915 role=server server=laravel-boost directory=/tmp/opencode/lsptest connectionID=d46b9584-abbb-41f3-bce9-fe899b072f44
+timestamp=2026-10-21T20:15:27.912Z level=INFO run=33c0f461 message=event event.id=evt_1601abea8002M2C5avqnmqml5y event.created=1792613727912 event.type=command.updated event.location.directory=/tmp/opencode/lsptest event.location.workspaceID=undefined event.data={}
+timestamp=2026-10-21T20:15:27.981Z level=INFO run=33c0f461 message="mcp connected" server=gh_grep tools=1 http.span=2008 role=server server=gh_grep directory=/tmp/opencode/lsptest connectionID=a30293d6-592f-4b83-abbf-457ed96599ea
+timestamp=2026-10-21T20:15:27.983Z level=INFO run=33c0f461 message=event event.id=evt_1601abeef002nlnJ5Bgxqfbs0k event.created=1792613727983 event.type=command.updated event.location.directory=/tmp/opencode/lsptest event.location.workspaceID=undefined event.data={}
+timestamp=2026-10-21T20:15:28.423Z level=INFO run=33c0f461 message="mcp connected" server=github tools=26 http.span=2450 role=server server=github directory=/tmp/opencode/lsptest connectionID=e693c83c-0710-45e3-b377-990dbd8a4886
+timestamp=2026-10-21T20:15:28.426Z level=INFO run=33c0f461 message=event event.id=evt_1601ac0aa001RsPUvoaTWZQlvB event.created=1792613728426 event.type=command.updated event.location.directory=/tmp/opencode/lsptest event.location.workspaceID=undefined event.data={}
+--- demo.php ---
+<?php
+
+namespace Demo;
+
+class Greeter
+{
+    public function greet(string $name): string
+    {
+        return "Hello, {$name}";
+    }
+}

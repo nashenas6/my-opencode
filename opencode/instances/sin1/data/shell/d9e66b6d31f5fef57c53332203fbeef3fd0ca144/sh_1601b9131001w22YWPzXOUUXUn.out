@@ -1,0 +1,14 @@
+--- wrapper calls ---
+(wrapper never invoked)
+--- demo.php diff ---
+15a16,20
+> 
+>     public function title(): string
+>     {
+>         return 'X';
+>     }
+--- run3 tail ---
++        return 'X';
++    }
+ }
+

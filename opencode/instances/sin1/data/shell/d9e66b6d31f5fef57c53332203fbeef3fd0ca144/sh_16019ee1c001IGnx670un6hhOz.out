@@ -1,0 +1,15 @@
+                                                                                                                                                                    
+
+Error: Connection input stream is not set. Use arguments of createConnection or set command line parameters: '--node-ipc', '--stdio' or '--socket={number}'
+    at /home/runner/.npm-global/lib/node_modules/intelephense/lib/intelephense.js:7:4150147
+    at t.createConnection (/home/runner/.npm-global/lib/node_modules/intelephense/lib/intelephense.js:7:4151298)
+    at 26997 (/home/runner/.npm-global/lib/node_modules/intelephense/lib/intelephense.js:2:3063168)
+    at i (/home/runner/.npm-global/lib/node_modules/intelephense/lib/intelephense.js:7:4415408)
+    at /home/runner/.npm-global/lib/node_modules/intelephense/lib/intelephense.js:7:4416369
+    at Object.<anonymous> (/home/runner/.npm-global/lib/node_modules/intelephense/lib/intelephense.js:7:4416379)
+    at Module._compile (node:internal/modules/cjs/loader:1781:14)
+    at Object..js (node:internal/modules/cjs/loader:1913:10)
+    at Module.load (node:internal/modules/cjs/loader:1505:32)
+    at Function._load (node:internal/modules/cjs/loader:1309:12)
+
+Node.js v22.23.3

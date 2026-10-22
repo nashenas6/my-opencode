@@ -1,0 +1,10 @@
+valid JSON
+{"intelephense":{"command":["intelephense","--stdio"],"extensions":[".php"],"initialization":{"storagePath":"/tmp/opencode/intelephense-storage","clearCache":false,"intelephense":{"environment":{"phpVersion":"8.5.0","includePaths":["vendor"]},"files":{"maxSize":5000000}}}}}
+    "path": "/home/runner/.config/opencode/opencode.json",
+      "$schema": "https://opencode.ai/config.json",
+      "lsp": {
+        "intelephense": {
+            "intelephense",
+            "storagePath": "/tmp/opencode/intelephense-storage",
+            "intelephense": {
+    "path": "/home/runner/.config/opencode"

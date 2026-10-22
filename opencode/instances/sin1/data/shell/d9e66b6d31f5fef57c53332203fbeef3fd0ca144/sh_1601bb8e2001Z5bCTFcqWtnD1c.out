@@ -1,0 +1,29 @@
+{
+  "intelephense": {
+    "command": [
+      "intelephense",
+      "--stdio"
+    ],
+    "extensions": [
+      ".php"
+    ],
+    "initialization": {
+      "storagePath": "/tmp/opencode/intelephense-storage",
+      "clearCache": false,
+      "intelephense": {
+        "environment": {
+          "phpVersion": "8.5.0",
+          "includePaths": [
+            "vendor"
+          ]
+        },
+        "files": {
+          "maxSize": 5000000
+        }
+      }
+    }
+  }
+}
+Configuration reloaded
+keys: $schema,model,autoupdate,lsp,mcp,plugins,plugin
+mcp intact: 5 | plugins intact: 2

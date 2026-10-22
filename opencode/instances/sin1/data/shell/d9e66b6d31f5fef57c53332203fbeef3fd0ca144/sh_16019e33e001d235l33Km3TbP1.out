@@ -1,0 +1,4 @@
+exit=1
+4422989 ip-help.txt
+/home/runner/.npm-global/lib/node_modules/intelephense/lib/intelephense.js:7
+            })(name => super[name], (name, value) => super[name] = value);`};function jw(e,t){return hD(e)&&lB(e.expression)&&!!(8192&tp(e.expression))&&e.expression.escapedText===t}function Kw(e){return 9===e.kind}function Vw(e){return 10===e.kind}function Jw(e){return 11===e.kind}function Yw(e){return 12===e.kind}function qw(e){return 14===e.kind}function Ww(e){return 15===e.kind}function zw(e){return 16===e.kind}function Xw(e){return 17===e.kind}function $w(e){return 18===e.kind}function Zw(e){return 26===e.kind}fu

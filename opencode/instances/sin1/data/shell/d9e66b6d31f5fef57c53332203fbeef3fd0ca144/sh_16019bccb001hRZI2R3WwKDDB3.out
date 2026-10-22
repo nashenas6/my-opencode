@@ -1,0 +1,3 @@
+/bin/bash: line 1: intelephense: command not found
+--- stdio probe ---
+exit=127

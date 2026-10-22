@@ -1,0 +1,31 @@
+2134-			message: '#^Using nullsafe method call on non\-nullable type Illuminate\\Console\\Command\. Use \-\> instead\.$#'
+2135-			identifier: nullsafe.neverNull
+2136-			count: 1
+2137:			path: database/seeders/CenterBoundarySeeder.php
+2138-
+2139-		-
+--
+2146-			message: '#^Call to an undefined static method App\\Models\\HardwareAudit\:\:create\(\)\.$#'
+2147-			identifier: staticMethod.notFound
+2148-			count: 1
+2149:			path: database/seeders/HardwareHistorySeeder.php
+2150-
+2151-		-
+2152:			message: '#^Method Database\\Seeders\\HardwareHistorySeeder\:\:actorNcodes\(\) has parameter \$records with no value type specified in iterable type array\.$#'
+2153-			identifier: missingType.iterableValue
+2154-			count: 1
+2155:			path: database/seeders/HardwareHistorySeeder.php
+2156-
+2157-		-
+2158:			message: '#^Method Database\\Seeders\\HardwareHistorySeeder\:\:actorNcodes\(\) return type has no value type specified in iterable type array\.$#'
+2159-			identifier: missingType.iterableValue
+2160-			count: 1
+2161:			path: database/seeders/HardwareHistorySeeder.php
+2162-
+2163-		-
+2164-			message: '#^Using nullsafe method call on non\-nullable type Illuminate\\Console\\Command\. Use \-\> instead\.$#'
+2165-			identifier: nullsafe.neverNull
+2166-			count: 2
+2167:			path: database/seeders/HardwareHistorySeeder.php
+2168-
+2169-		-

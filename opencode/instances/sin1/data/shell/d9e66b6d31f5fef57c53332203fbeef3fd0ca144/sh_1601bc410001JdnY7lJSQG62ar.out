@@ -1,0 +1,3 @@
+keys: $schema,model,autoupdate,mcp,plugins,plugin
+lsp present: False
+Configuration reloaded

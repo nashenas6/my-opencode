@@ -1,0 +1,38 @@
+database/seeders/CenterBoundarySeeder.php:139:        $this->command?->info('Created '.count($boundaries).' boundaries for center units.');
+database/seeders/HardwareHistorySeeder.php:57:        $this->command?->info('Seeding hardware audit history for '.count($records).' devices...');
+database/seeders/HardwareHistorySeeder.php:108:        $this->command?->info("Hardware history seeded: {$inserted} new audit entries".($skipped ? ", {$skipped} devices skipped (not found)." : '.'));
+--- baseline entries ---
+81-		-
+82-			message: '#^Using nullsafe property access "\?\-\>n_code" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+83:			identifier: nullsafe.neverNull
+84-			count: 1
+85-			path: app/Exports/HardwareAuditsExport.php
+--
+87-		-
+88-			message: '#^Using nullsafe property access "\?\-\>name" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+89:			identifier: nullsafe.neverNull
+90-			count: 1
+91-			path: app/Exports/HardwareAuditsExport.php
+--
+129-		-
+130-			message: '#^Using nullsafe property access "\?\-\>name" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+131:			identifier: nullsafe.neverNull
+132-			count: 1
+133-			path: app/Exports/HardwareExport.php
+--
+333-		-
+334-			message: '#^Using nullsafe property access on non\-nullable type App\\Models\\Unit\. Use \-\> instead\.$#'
+335:			identifier: nullsafe.neverNull
+336-			count: 1
+337-			path: app/Http/Controllers/Api/HardwareController.php
+--
+609-		-
+610-			message: '#^Using nullsafe property access "\?\-\>id" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+611:			identifier: nullsafe.neverNull
+612-			count: 1
+613-			path: app/Http/Controllers/Api/TodoController.php
+--
+--- git log for those seeders ---
+24eff26e fix: format codebase with Pint + fix PHPStan baseline for CI
+2a172fa5 feat: add standardized HardwareHistorySeeder keyed by n_code
+37056973 seeder for boundart centers

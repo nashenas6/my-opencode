@@ -1,0 +1,4 @@
+BODY: {"jsonrpc":"2.0","method":"window/logMessage","params":{"type":3,"message":"Initialising intelephense 1.18.5"}}
+serverInfo: undefined
+key capabilities: none
+handshake complete

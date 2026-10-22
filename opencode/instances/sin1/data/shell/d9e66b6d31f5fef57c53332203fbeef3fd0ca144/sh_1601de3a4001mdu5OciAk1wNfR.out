@@ -1,0 +1,7 @@
+::error file=database/seeders/CenterBoundarySeeder.php,line=,col=0::Ignored error pattern #^Using nullsafe method call on non\-nullable type Illuminate\\Console\\Command\. Use \-\> instead\.$# (nullsafe.neverNull) in path /home/runner/h-dashboard/database/seeders/CenterBoundarySeeder.php was not matched in reported errors.
+::error file=database/seeders/HardwareHistorySeeder.php,line=,col=0::Ignored error pattern #^Using nullsafe method call on non\-nullable type Illuminate\\Console\\Command\. Use \-\> instead\.$# (nullsafe.neverNull) in path /home/runner/h-dashboard/database/seeders/HardwareHistorySeeder.php was not matched in reported errors.
+  Line   database/seeders/CenterBoundarySeeder.php                            
+         was not matched in reported errors.                                  
+  Line   database/seeders/HardwareHistorySeeder.php                           
+         was not matched in reported errors.                                  
+ [ERROR] Found 2 errors                                                         
