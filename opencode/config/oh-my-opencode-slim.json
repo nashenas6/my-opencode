@@ -5,7 +5,7 @@
         "model": "opencode/deepseek-v4.1-flash-free"
       },
       "oracle": {
-        "model": "opencode/nemotron-3-ultra-free"
+        "model": "opencode/nemotron-3.5-lightning-free"
       },
       "explorer": {
         "model": "opencode/glm-5.3-flash-free"
@@ -20,7 +20,7 @@
         "model": "opencode/beam-free"
       },
       "council": {
-        "model": "opencode/nemotron-3-ultra-free"
+        "model": "opencode/nemotron-3.5-lightning-free"
       }
     }
   },
@@ -31,7 +31,7 @@
           "model": "opencode/deepseek-v4.1-flash-free"
         },
         "nemotron": {
-          "model": "opencode/nemotron-3-ultra-free"
+          "model": "opencode/nemotron-3.5-lightning-free"
         },
         "glm": {
           "model": "opencode/glm-5.3-flash-free"
