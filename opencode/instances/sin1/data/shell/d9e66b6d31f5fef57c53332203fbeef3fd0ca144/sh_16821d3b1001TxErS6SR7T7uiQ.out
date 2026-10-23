@@ -1,0 +1,7 @@
+light      | fg var: oklch(92% .004 286.32) | neutral-content: oklch(92% .004 286.32) | base-300: oklch(95% 0 0) | base-content: oklch(21% .006 285.885) | header: 15.27 | hoverOther: 17.72
+dark       | fg var: oklch(92% .004 286.32) | neutral-content: oklch(92% .004 286.32) | base-300: oklch(21.15% .012 254.09) | base-content: oklch(97.807% .029 256.847) | header: 16.44 | hoverOther: 5.49
+synthwave  | fg var: oklch(87% .065 274.039) | neutral-content: oklch(87% .065 274.039) | base-300: oklch(25% .09 281.288) | base-content: oklch(78% .115 274.713) | header: 8 | hoverOther: 3.91
+coffee     | fg var: oklch(83.302% .003 326.261) | neutral-content: oklch(83.302% .003 326.261) | base-300: oklch(16% .019 329.708) | base-content: oklch(72.354% .092 79.129) | header: 7.9 | hoverOther: 2.5
+cupcake    | fg var: oklch(92% .004 286.32) | neutral-content: oklch(92% .004 286.32) | base-300: oklch(91.586% .006 53.44) | base-content: oklch(23.574% .066 313.189) | header: 13.18 | hoverOther: 16.17
+fantasy    | fg var: oklch(85.561% .005 256.847) | neutral-content: oklch(85.561% .005 256.847) | base-300: oklch(86% 0 0) | base-content: oklch(27.807% .029 256.847) | header: 9.61 | hoverOther: 14.68
+luxury     | fg var: oklch(93.203% .089 90.861) | neutral-content: oklch(93.203% .089 90.861) | base-300: oklch(23.219% .004 308.229) | base-content: oklch(75.687% .123 76.89) | header: 7.62 | hoverOther: 3.54

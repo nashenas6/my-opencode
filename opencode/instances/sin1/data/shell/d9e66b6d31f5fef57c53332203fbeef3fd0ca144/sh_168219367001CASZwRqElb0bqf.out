@@ -1,0 +1,98 @@
+<?php
+
+use App\Models\Person;
+use App\Models\Unit;
+use App\Models\User;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\Support\Concerns\InteractsWithTestSetup;
+use Tests\TestCase;
+
+/**
+ * #1184 — فونت Vazirmatn یک خانواده و یک منبع دارد: `@font-face`ها در
+ * app.css، و shell اپ فقط preload می‌کند. هیچ پاسخی نباید `@font-face`
+ * اینلاین یا مسیر شکستهٔ `/public/fonts/` را برگرداند.
+ */
+uses(TestCase::class, RefreshDatabase::class, InteractsWithTestSetup::class);
+
+beforeEach(function () {
+    $this->withoutVite();
+
+    $unit = Unit::factory()->create();
+    $person = Person::factory()->create(['u_id' => $unit->id]);
+    $this->user = User::factory()->create(['n_code' => $person->n_code]);
+});
+
+test('app shell preloads Vazirmatn and does not inline a font-face', function () {
+    $response = $this->actingAs($this->user)->followingRedirects()->get('/');
+
+    $response->assertOk()
+        ->assertSee('fonts/Vazirmatn-Regular.woff2', false)
+        ->assertSee('rel="preload"', false)
+        ->assertSee('as="font"', false)
+        ->assertDontSee('@font-face', false)
+        ->assertDontSee('/public/fonts/', false);
+});
+
+test('login page does not inline a font-face or use the public fonts path', function () {
+    $response = $this->get('/login');
+
+    $response->assertOk()
+        ->assertSee('fonts/Vazirmatn-Regular.woff2', false)
+        ->assertSee('rel="preload"', false)
+        ->assertSee('as="font"', false)
+        ->assertDontSee('@font-face', false)
+        ->assertDontSee('/public/fonts/', false);
+});
+=== mirror ===
+        // mirror would stop rendering part of the component.
+        $this->assertSame(
+            [],
+            $vendorLines,
+            "{$mirrorPath} no longer renders lines that maryUI's component does. Re-sync it against {$vendorPath}."
+        );
+
+        $this->assertNotEmpty(
+            $mirrorLines,
+            "{$mirrorPath} adds nothing to {$vendorPath} — is the accessibility change still there?"
+        );
+
+        foreach ($this->classifyAdditions($mirrorLines) as [$line, $kind]) {
+            $this->assertContains(
+                $kind,
+                ['attribute', 'guard'],
+                "{$mirrorPath} diverges from {$vendorPath} in a way the accessibility change does not explain: `{$line}`. "
+                .'If maryUI changed its markup, re-sync the mirror rather than widening this list.'
+            );
+        }
+    }
+
+    /**
+     * Labels each added line 'attribute' or 'guard'.
+     *
+     * `aria-current` cannot be a bare attribute — it has to be conditional on
+     * the same expression the active class uses, or it would fire on every
+     * item. So an `@if(…)`/`@endif` pair around an added attribute is the
+     * expected shape, and is allowed ONLY that shape: a guard that wraps
+     * nothing, or wraps markup, is drift.
+     *
+     * @param  array<int, string>  $added
+     * @return array<int, array{0: string, 1: string}>
+     */
+    private function classifyAdditions(array $added): array
+    {
+        $classified = [];
+        $guardDepth = 0;
+
+        foreach ($added as $line) {
+            if (preg_match(self::ALLOWED_ADDITION, $line) === 1) {
+                $classified[] = [$line, 'attribute'];
+
+                continue;
+            }
+
+            if (str_starts_with($line, '@if(') && $guardDepth === 0) {
+                $guardDepth = 1;
+                $classified[] = [$line, 'guard'];
+
+                continue;
+=== a11y css refs ===

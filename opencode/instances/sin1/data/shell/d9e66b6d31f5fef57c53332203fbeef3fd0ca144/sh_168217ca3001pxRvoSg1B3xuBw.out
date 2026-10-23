@@ -1,0 +1,66 @@
+AccessServiceMemoizationTest.php
+AccessServiceTest.php
+Accessibility
+AccessibilityInfrastructureTest.php
+ActivityLogDetailScopeTest.php
+ActivityLogModelTest.php
+ActivityLogPageLivewireTest.php
+ActivityLogPageTest.php
+ActivityLogServiceTest.php
+ApiAbilityTest.php
+ApiLoginTest.php
+ApiLogoutTest.php
+ApiRateLimitTest.php
+AppKeyGuardWiringTest.php
+AppKeyLeakGuardTest.php
+ArchiveOldRecordsCommandTest.php
+Auth
+AuthTest.php
+BoundaryModelTest.php
+CacheInvalidationTest.php
+ChangePasswordTest.php
+CompletedAtIndexTest.php
+CoverageReportComponentTableTest.php
+CycleGuardDeadlineTest.php
+DailySeriesBetweenRangeTest.php
+DashboardPageTest.php
+DashboardPriorityBucketsTest.php
+DashboardTicketChartTest.php
+DashboardTodoNotificationTest.php
+DeleteAlreadyDeletedTodoTest.php
+EnvSecretGuardTest.php
+ExcelFormulaEscapeTest.php
+GenerateDailyReportsCommandTest.php
+GenerateDueMaintenanceCommandTest.php
+GenerateRecurringTodosCommandTest.php
+GeocodingFetchMigrationTest.php
+GisApiTest.php
+GitHooksTest.php
+HardwareApiTest.php
+HardwareAuditChangesNormalizationMigrationTest.php
+HardwareAuditControllerTest.php
+HardwareAuditDetailTest.php
+HardwareAuditLivewireTest.php
+HardwareAuditMigrationTest.php
+HardwareAuditModalLivewireTest.php
+HardwareAuditModelTest.php
+HardwareAuditObserverRequestTest.php
+HardwareAuditObserverTest.php
+HardwareAuditRollbackAllowlistTest.php
+HardwareAuditTest.php
+tests/Feature/AccessibilityInfrastructureTest.php
+tests/Feature/LayoutHeadTest.php:12: * app.css، و shell اپ فقط preload می‌کند. هیچ پاسخی نباید `@font-face`
+tests/Feature/AccessibilityInfrastructureTest.php:45:     * (`//a[@aria-current="page"]`) جست‌وجو کرد.
+tests/Feature/AccessibilityInfrastructureTest.php:246:    // قدم ۲ — aria-current روی آیتم فعال منو
+tests/Feature/AccessibilityInfrastructureTest.php:256:        $current = $xpath->query('//a[@aria-current="page"]');
+tests/Feature/AccessibilityInfrastructureTest.php:260:            'دقیقاً یک لینک باید aria-current="page" داشته باشد — همان صفحه‌ای که در آن هستیم.'
+tests/Feature/AccessibilityInfrastructureTest.php:275:            $xpath->query('//nav//a[@href="/activity-log"][@aria-current]')->length,
+tests/Feature/AccessibilityInfrastructureTest.php:276:            'لینکی که صفحهٔ جاری نیست نباید aria-current بگیرد؛ اعلامِ اشتباه از نبودِ اعلام بدتر است.'
+tests/Feature/AccessibilityInfrastructureTest.php:283:        // `Str::contains($slot, 'mary-active-menu')` over the ALREADY RENDERED
+tests/Feature/AccessibilityInfrastructureTest.php:284:        // child HTML. Dropping that class while adding aria-current would leave
+tests/Feature/AccessibilityInfrastructureTest.php:292:        $active = $xpath->query('//a[@aria-current="page"]')->item(0);
+tests/Feature/AccessibilityInfrastructureTest.php:295:            'mary-active-menu',
+tests/Feature/AccessibilityInfrastructureTest.php:297:            'کلاس mary-active-menu باید بماند؛ MenuSub به آن وابسته است.'
+tests/Feature/AccessibilityInfrastructureTest.php:333:            $current = $xpath->query('//nav//a[@aria-current="page"]');
+tests/Feature/MaryUiMirrorTest.php:26:    private const ALLOWED_ADDITION = '/^(aria-sort|aria-current|aria-pressed|tabindex|@keydown\.)/';
+tests/Feature/MaryUiMirrorTest.php:85:     * `aria-current` cannot be a bare attribute — it has to be conditional on

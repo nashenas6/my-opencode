@@ -1,0 +1,72 @@
+185:                <x-menu activate-by-route>
+253:                    {{-- پرسنل — روت خواندن union است (#775): kargozini یا manage_personnel --}}
+255:                    <x-menu-item title="پرسنل" icon="o-user-group" link="/kargozini/persons" wire:navigate />
+258:                    <x-menu-item title="آمار پرسنل" icon="o-chart-bar" link="/hr-dashboard" wire:navigate />
+325:                    <x-menu-item title="گزارش پرسنل" icon="o-users" link="/reports/persons" wire:navigate />
+---
+16: * for the current route with a CSS class (`mary-active-menu`) and nothing else.
+26: * `mary-active-menu` must be preserved. Mary's MenuSub decides a submenu is open
+27: * with `Str::contains($slot, 'mary-active-menu')` over the already-rendered child
+112:                                "mary-active-menu $activeBgColor" => ($active || ($activateByRoute && $routeMatches()))
+116:                        {{-- #957: `mary-active-menu` سیگنال بصری است؛ بدون aria-current
+122:                            aria-current="page"
+---
+264:.card,
+268:.menu,
+271:.alert,
+296:.toast .alert,
+297:.alert {
+        box-shadow: 0 12px 40px -10px rgba(0, 0, 0, 0.34);
+    }
+}
+
+/* Apply glass globally to the major surfaces — no Blade/vendor edits needed.
+   !important overrides maryUI/daisyUI's own bg-base-100 on these elements. */
+.card,
+.modal-box,
+.navbar,
+.dropdown-content,
+.menu,
+.popover,
+.toast,
+.alert,
+.stat,
+.drawer-side {
+    background-color: color-mix(in oklab, var(--color-base-100) 70%, transparent) !important;
+    -webkit-backdrop-filter: blur(12px) saturate(160%) !important;
+    backdrop-filter: blur(12px) saturate(160%) !important;
+    border: 1px solid color-mix(in oklab, var(--color-base-content) 14%, transparent) !important;
+    box-shadow: 0 8px 32px -12px rgba(0, 0, 0, 0.28) !important;
+}
+
+/* Alert/toast text must stay readable on the glass background above.
+   That rule replaces the variant background (alert-warning etc.) with a
+   base-100 glass panel, but text color stays --color-*-content — which DaisyUI
+   designs FOR the bright variant background. Measured against base-100:
+   error-content 1.01:1, success-content 1.58:1, warning-content 1.71:1 in the
+   dark theme (unreadable); light themes read fine against white, which is why
+   the bug only shows in dark mode.
+   Fix: keep the semantic hue but anchor it to --color-base-content (which every
+   DaisyUI theme guarantees contrast against base-100). 30% variant color was
+   measured across all 7 enabled themes (light, dark, synthwave, coffee,
+   cupcake, fantasy, luxury) — worst case 6.90:1 (coffee/success), all pass
+   WCAG AA (≥4.5). Using the full variant color instead would fix dark themes
+   and break light ones (warning on white = 1.76:1).
+   Covers the toast body (title + description + icon all inherit currentColor)
+   and the dashboard banners. Falls back to base-content for a plain .alert. */
+.toast .alert,
+.alert {
+    color: color-mix(in oklab, var(--alert-color, var(--color-base-content)) 30%, var(--color-base-content)) !important;
+}
+
+/* Keep form controls readable: solid-ish glass, not fully transparent. */
+.input,
+.select,
+.textarea,
+.range,
+---
+19:    themes: light, dark, synthwave, coffee, cupcake,fantasy --default,luxury --prefersdark;
+---
+66:            const savedTheme = localStorage.getItem('mary-theme')?.replaceAll('"', '');
+68:            if (savedTheme) {
+69:                document.documentElement.setAttribute('data-theme', savedTheme);

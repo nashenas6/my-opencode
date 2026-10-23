@@ -1,0 +1,4 @@
+ M composer.lock
+ M package-lock.json
+30655 /bin/bash -c git status --short; pgrep -af 'artisan serve' || echo 'no server'; git rev-parse --short HEAD
+0ba28f5c

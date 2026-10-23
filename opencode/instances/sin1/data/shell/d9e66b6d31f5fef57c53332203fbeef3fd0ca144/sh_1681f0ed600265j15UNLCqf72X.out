@@ -1,0 +1,2 @@
+b196e145 feat(a11y): mark the active sidebar link with aria-current="page"
+21c273f8 fix(#996): match sidebar active state on path segments, not string prefixes

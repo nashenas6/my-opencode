@@ -1,0 +1,23 @@
+b196e14579e1106d166448fdcabb2088562b3f44
+feat(a11y): mark the active sidebar link with aria-current="page"
+
+Closes part of #957 (step 2, second half).
+
+`<x-menu activate-by-route>` signalled the current page with the
+`mary-active-menu` class and nothing else — a colour and a background. A
+screen reader therefore heard an undifferentiated list of links with no idea
+where the user actually was.
+
+Same reasoning as the table override: the active state is decided inside
+Mary's MenuItem::render(), so no attribute at the call site can express it.
+AccessibleMenuItem mirrors that render and adds `aria-current="page"` under
+the exact same condition as the class, so the visual and the announced state
+cannot drift.
+
+`mary-active-menu` is kept deliberately: Mary's MenuSub opens a submenu with
+`Str::contains($slot, 'mary-active-menu')` over the already-rendered child
+markup. The test asserts the enclosing <details> is still open, because losing
+the class would collapse every submenu while the link test stayed green.
+9a748301 Merge pull request #970 from asgarimehdi/fix/949-unit-delete-impact-clean
+51e2ec3e Merge pull request #972 from asgarimehdi/docs/agents-zwnj-cleanup-2
+31fb87f5 Merge pull request #969 from Shabakebehdasht/improve/957-a11y-infrastructure

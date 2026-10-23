@@ -1,0 +1,26 @@
+done
+PERSONS
+light      پرسنل oklch(0.92 0.004 286.32) | oklch(0.95 0 0) | 1.09 | 
+dark       پرسنل oklch(0.92 0.004 286.32) | oklch(0.2115 0.012 254.09) | 13.91 | 
+synthwave  پرسنل oklch(0.87 0.065 274.039) | oklch(0.25 0.09 281.288) | 10.97 | 
+coffee     پرسنل oklch(0.83302 0.003 326.261) | oklch(0.16 0.019 329.708) | 11.6 | 
+cupcake    پرسنل oklab(0.914276 0.00121421 -0.00369586) | oklab(0.866122 0.00441837 0.00387163) | 1.16 | 
+fantasy    پرسنل oklab(0.856604 -0.00110285 -0.00485293) | oklab(0.860862 0.0000551631 0.0000743856) | 1.01 | 
+luxury     پرسنل oklch(0.93203 0.089 90.861) | oklch(0.23219 0.004 308.229) | 13.77 | 
+DASHBOARD
+light      صفحه اول oklch(0.92 0.004 286.32) | oklch(0.95 0 0) | 1.09 | 
+dark       صفحه اول oklch(0.92 0.004 286.32) | oklch(0.2115 0.012 254.09) | 13.91 | 
+synthwave  صفحه اول oklch(0.87 0.065 274.039) | oklch(0.25 0.09 281.288) | 10.97 | 
+coffee     صفحه اول oklch(0.83302 0.003 326.261) | oklch(0.16 0.019 329.708) | 11.6 | 
+cupcake    صفحه اول oklch(0.92 0.004 286.32) | oklch(0.91586 0.006 53.44) | 1.01 | 
+fantasy    صفحه اول oklch(0.85561 0.005 256.847) | oklch(0.86 0 0) | 1.01 | 
+luxury     صفحه اول oklch(0.93203 0.089 90.861) | oklch(0.23219 0.004 308.229) | 13.77 | 
+HOVER {"text":"جستجوی کلی","color":"oklch(0.21 0.006 285.885)","backgroundColor":"oklab(0.21 0.00164225 -0.00577088 / 0.1)","classes":"my-0.5 py-1.5 px-4 hover:text-inherit whitespace-nowrap","contrast":14.34}
+HEADERS
+light      {"text":"مدیریت سازمان","classes":"hover:text-inherit px-4 py-1.5 my-0.5 text-inherit bg-base-300","color":"oklch(0.21 0.006 285.885)","backgroundColor":"oklch(0.95 0 0)","contrast":15.27}
+dark       {"text":"مدیریت سازمان","classes":"hover:text-inherit px-4 py-1.5 my-0.5 text-inherit bg-base-300","color":"oklch(0.97807 0.029 256.847)","backgroundColor":"oklch(0.2115 0.012 254.09)","contrast":16.44}
+synthwave  {"text":"مدیریت سازمان","classes":"hover:text-inherit px-4 py-1.5 my-0.5 text-inherit bg-base-300","color":"oklch(0.78 0.115 274.713)","backgroundColor":"oklch(0.25 0.09 281.288)","contrast":8}
+coffee     {"text":"مدیریت سازمان","classes":"hover:text-inherit px-4 py-1.5 my-0.5 text-inherit bg-base-300","color":"oklch(0.72354 0.092 79.129)","backgroundColor":"oklch(0.16 0.019 329.708)","contrast":7.9}
+cupcake    {"text":"مدیریت سازمان","classes":"hover:text-inherit px-4 py-1.5 my-0.5 text-inherit bg-base-300","color":"oklab(0.267839 0.0433402 -0.0390088)","backgroundColor":"oklab(0.866122 0.00441837 0.00387163)","contrast":10.29}
+fantasy    {"text":"مدیریت سازمان","classes":"hover:text-inherit px-4 py-1.5 my-0.5 text-inherit bg-base-300","color":"oklab(0.277417 -0.00579997 -0.0285461)","backgroundColor":"oklab(0.860862 0.0000551631 0.0000743856)","contrast":9.61}
+luxury     {"text":"مدیریت سازمان","classes":"hover:text-inherit px-4 py-1.5 my-0.5 text-inherit bg-base-300","color":"oklch(0.75687 0.123 76.89)","backgroundColor":"oklch(0.23219 0.004 308.229)","contrast":7.62}

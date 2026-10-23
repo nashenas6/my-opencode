@@ -1,0 +1,13 @@
+ M composer.lock
+ M package-lock.json
+29965 /bin/bash -c git status --short; pgrep -af 'artisan serve' || echo 'server stopped'; ls tests/e2e | head; grep -rn 'login\|helpers' tests/e2e/*.ts 2>/dev/null | head -8
+a11y
+activity
+auth
+create-pwd-user.php
+create-token.php
+dashboard
+global-setup.ts
+global-teardown.ts
+hardware
+hr

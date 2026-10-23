@@ -1,0 +1,90 @@
+=== light {
+ "fgVar": "oklch(92% .004 286.32)",
+ "bgVar": "oklch(14% .005 285.823)",
+ "base300": "oklch(95% 0 0)",
+ "baseContent": "oklch(21% .006 285.885)",
+ "neutral": "oklch(14% .005 285.823)",
+ "neutralContent": "oklch(92% .004 286.32)",
+ "color": "oklch(0.92 0.004 286.32)",
+ "bg": "oklch(0.95 0 0)",
+ "contrast": 1.09,
+ "rect": {
+  "x": 1178,
+  "y": 471.109375,
+  "width": 228,
+  "height": 38.703125,
+  "top": 471.109375,
+  "right": 1406,
+  "bottom": 509.8125,
+  "left": 1178
+ }
+}
+=== fantasy {
+ "fgVar": "oklch(85.561% .005 256.847)",
+ "bgVar": "oklch(27.807% .029 256.847)",
+ "base300": "oklch(86% 0 0)",
+ "baseContent": "oklch(27.807% .029 256.847)",
+ "neutral": "oklch(27.807% .029 256.847)",
+ "neutralContent": "oklch(85.561% .005 256.847)",
+ "color": "oklab(0.856604 -0.00110285 -0.00485293)",
+ "bg": "oklab(0.860862 0.0000551631 0.0000743856)",
+ "contrast": 1.01,
+ "rect": {
+  "x": 1178,
+  "y": 471.109375,
+  "width": 228,
+  "height": 38.703125,
+  "top": 471.109375,
+  "right": 1406,
+  "bottom": 509.8125,
+  "left": 1178
+ }
+}
+=== cupcake {
+ "fgVar": "oklch(92% .004 286.32)",
+ "bgVar": "oklch(27% .006 286.033)",
+ "base300": "oklch(91.586% .006 53.44)",
+ "baseContent": "oklch(23.574% .066 313.189)",
+ "neutral": "oklch(27% .006 286.033)",
+ "neutralContent": "oklch(92% .004 286.32)",
+ "color": "oklab(0.914276 0.00121421 -0.00369586)",
+ "bg": "oklab(0.866122 0.00441837 0.00387163)",
+ "contrast": 1.16,
+ "rect": {
+  "x": 1178,
+  "y": 474.109375,
+  "width": 228,
+  "height": 38.703125,
+  "top": 474.109375,
+  "right": 1406,
+  "bottom": 512.8125,
+  "left": 1178
+ }
+}
+=== dark {
+ "fgVar": "oklch(92% .004 286.32)",
+ "bgVar": "oklch(14% .005 285.823)",
+ "base300": "oklch(21.15% .012 254.09)",
+ "baseContent": "oklch(97.807% .029 256.847)",
+ "neutral": "oklch(14% .005 285.823)",
+ "neutralContent": "oklch(92% .004 286.32)",
+ "color": "oklch(0.92 0.004 286.32)",
+ "bg": "oklch(0.2115 0.012 254.09)",
+ "contrast": 13.91,
+ "rect": {
+  "x": 1178,
+  "y": 471.109375,
+  "width": 228,
+  "height": 38.703125,
+  "top": 471.109375,
+  "right": 1406,
+  "bottom": 509.8125,
+  "left": 1178
+ }
+}
+CASCADE LIGHT
+{"selector":"a:-webkit-any-link","origin":"user-agent","layer":"","props":[{"name":"color","value":"-webkit-link"}],"media":"","source":""}
+{"selector":"a","origin":"regular","layer":"base","props":[{"name":"color","value":"inherit"},{"name":"color","value":"inherit"}],"media":"","source":""}
+{"selector":".menu :where(li) > :not(ul, menu, .menu-title, details, .btn):active, .menu :where(li) > :not(ul, menu, .menu-title, details, .btn).menu-active, .menu :where(li) > :not(ul, menu, .menu-title, details, .btn)[aria-current]:not([aria-current=\"","origin":"regular","layer":"utilities > daisyui.l1.l2.l3","props":[{"name":"color","value":"var(--menu-active-fg)"},{"name":"background-color","value":"var(--menu-active-bg)"},{"name":"color","value":"var(--menu-active-fg)"},{"name":"background-color","value":"var(--menu-active-bg)"}],"media":"","source":""}
+{"selector":".bg-base-300, .bg-base-300\\/30","origin":"regular","layer":"utilities","props":[{"name":"background-color","value":"var(--color-base-300)"},{"name":"background-color","value":"var(--color-base-300)"}],"media":"","source":""}
+COMPUTED {"color":"oklch(0.92 0.004 286.32)","backgroundColor":"oklch(0.95 0 0)"}

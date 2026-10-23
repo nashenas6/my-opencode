@@ -1,0 +1,10 @@
+vendor/robsontenorio/mary/src/View/Components/Menu.php:20:        public ?string $activeBgColor = 'bg-base-300',
+vendor/robsontenorio/mary/src/View/Components/MenuSub.php:32:                @aware(['horizontal' => false, 'activeBgColor' => 'bg-base-300'])
+vendor/robsontenorio/mary/src/View/Components/MenuSub.php:64:                            @class(["hover:text-inherit px-4 py-1.5 my-0.5 text-inherit", $activeBgColor => $submenuActive])
+                             همان شرطِ کلاس بالاست تا این دو هرگز واگرا نشوند.
+                             `$getHref()` لازم است: آیتمِ بدون لینک (دکمهٔ جمع‌کردن
+                             سایدبار) صفحه‌ای را «فعلی» نمی‌کند. --}}
+                        @if($getHref() && ($active || ($activateByRoute && $routeMatches())))
+                            aria-current="page"
+                        @endif
+
