@@ -1,0 +1,18 @@
+resources/views/livewire/map/map-dashboard.blade.php:602: return badges[priority] || 'badge-ghost';
+resources/views/livewire/kargozini/import-persons/import-persons.blade.php:673: <span class="badge badge-ghost badge-xs">{{ $field }}</span>
+resources/views/livewire/hardware/import-hardware/import-hardware.blade.php:682: <span class="badge badge-ghost badge-xs">{{ $field }}</span>
+resources/views/livewire/hardware/table.blade.php:18: <x-badge value="خاموش" class="badge-neutral" />
+resources/views/livewire/hardware/table.blade.php:66: <x-badge value="خاموش" class="badge-neutral" />
+resources/views/livewire/hardware/audit-modal.blade.php:31: default => 'badge-neutral',
+resources/views/livewire/profile/index.blade.php:234: default => 'badge-ghost',
+resources/views/livewire/hr/personnel-badge.blade.php:13:<span class="badge badge-sm badge-ghost">{{ $badgeData[$unit->id] ?? 0 }} نفر</span>
+resources/views/livewire/hr/org-chart.blade.php:151: <span class="badge badge-xs badge-ghost">{{ $p->semat?->name ?? '---' }}</span>
+resources/views/livewire/todo/todo.blade.php:707: badge.className = 'badge badge-xs badge-ghost';
+resources/views/livewire/search/index.blade.php:183: 'created' => 'badge-neutral',
+resources/views/livewire/search/index.blade.php:188: default => 'badge-ghost',
+resources/views/livewire/activity-log/index.blade.php:238: default => 'badge-ghost',
+resources/views/livewire/tickets/⚡monitoring.blade.php:340: <x-badge :value="$ticket->status_name" class="{{ $ticket->status === 'accepted' ? 'badge-info' : 'badge-ghost' }}" rounded />
+resources/views/livewire/tickets/⚡inbox.blade.php:530: $pClasses = ['urgent' => 'badge-error', 'normal' => 'badge-info', 'low' => 'badge-ghost'];
+resources/views/livewire/tickets/⚡inbox.blade.php:533: <x-badge :value="$pLabels[$ticket->priority] ?? '---'" class="{{ $pClasses[$ticket->priority] ?? 'badge-ghost' }}" rounded />
+resources/views/livewire/it/zabbix-devices.blade.php:529: <span class="badge badge-ghost badge-sm font-mono">{{ $itemId }}</span>
+resources/views/livewire/it/zabbix-devices.blade.php:538: <span class="badge badge-ghost badge-sm">غیرفعال</span>

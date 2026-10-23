@@ -1,0 +1,13 @@
+--- .env.e2e written ---
+APP_KEY length: 51
+DB_PASSWORD length: 13
+REDIS_PASSWORD length: 13
+DB_DATABASE: h_dashboard_e2e
+APP_LOCALE:  fa
+SESSION_SECURE_COOKIE: false
+TEST_N_CODE: 4411015056
+---
+APP_KEY len=51 placeholder=0
+DB_PASSWORD len=13 placeholder=1
+REDIS_PASSWORD len=13 placeholder=1
+DB_USERNAME len=11 placeholder=0

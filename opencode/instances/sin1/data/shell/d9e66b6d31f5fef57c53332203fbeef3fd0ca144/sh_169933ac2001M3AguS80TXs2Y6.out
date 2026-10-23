@@ -1,0 +1,9 @@
+DB_HOST=127.0.0.1
+DB_PORT=5432
+DB_DATABASE=h_dashboard_e2e
+DB_USERNAME=h_dashboard
+DB_PASSWORD=<same-as-dev>
+REDIS_HOST=127.0.0.1
+REDIS_PORT=6379
+REDIS_PASSWORD=<same-as-dev>
+CACHE_STORE=array

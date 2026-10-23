@@ -1,0 +1,4 @@
+APP_KEY length: 51 masked:no
+DB_PASSWORD length: 13 masked:no
+REDIS_PASSWORD length: 13 masked:no
+DB_USERNAME length: 11 masked:no

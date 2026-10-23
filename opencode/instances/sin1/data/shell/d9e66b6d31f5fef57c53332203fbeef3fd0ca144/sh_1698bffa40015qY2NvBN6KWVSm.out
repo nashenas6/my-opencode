@@ -1,0 +1,99 @@
+abyss
+abyss.css
+acid
+acid.css
+aqua
+aqua.css
+autumn
+autumn.css
+black
+black.css
+bumblebee
+bumblebee.css
+business
+business.css
+caramellatte
+caramellatte.css
+cmyk
+cmyk.css
+coffee
+coffee.css
+corporate
+corporate.css
+cupcake
+cupcake.css
+cyberpunk
+cyberpunk.css
+dark
+dark.css
+dim
+dim.css
+dracula
+dracula.css
+emerald
+emerald.css
+fantasy
+fantasy.css
+forest
+forest.css
+garden
+garden.css
+halloween
+halloween.css
+index.js
+lemonade
+lemonade.css
+light
+light.css
+lofi
+lofi.css
+luxury
+luxury.css
+night
+night.css
+nord
+nord.css
+object.d.ts
+object.js
+pastel
+pastel.css
+retro
+retro.css
+silk
+silk.css
+sunset
+sunset.css
+synthwave
+synthwave.css
+valentine
+valentine.css
+winter
+winter.css
+wireframe
+wireframe.css
+---
+@import "tailwindcss";
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: "Vazirmatn", ui-sans-serif, system-ui, sans-serif;
+}
+
+/**
+    The lines above are intact.
+    The lines below were added by maryUI installer.
+*/
+
+/** daisyUI */
+@plugin "daisyui" {
+    themes: light, dark, synthwave, coffee, cupcake,fantasy --default,luxury --prefersdark;
+}
+
+/* maryUI */
+@source "../../vendor/robsontenorio/mary/src/View/Components/**/*.php";
+
+/* Theme toggle */

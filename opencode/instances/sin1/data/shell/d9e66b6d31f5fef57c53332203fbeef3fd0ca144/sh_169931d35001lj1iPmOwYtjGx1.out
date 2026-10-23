@@ -1,0 +1,2 @@
+.env.e2e: line 29: syntax error near unexpected token `newline'
+[e2e] .env restored

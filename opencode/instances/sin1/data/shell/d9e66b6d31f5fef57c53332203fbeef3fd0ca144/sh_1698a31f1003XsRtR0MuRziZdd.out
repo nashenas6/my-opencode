@@ -1,0 +1,79 @@
+== badge-primary ==
+resources/views/components/help/content/hardware.blade.php -> class="badge badge-outline badge-primary">لپ‌تاپ‌ها</span>
+resources/views/components/help/content/tickets.blade.php -> class="badge badge-success">کم</span></li>
+resources/views/components/help/content/tickets.blade.php -> class="badge badge-primary">جدید (Created)</span>
+resources/views/components/help/content/activity-log.blade.php -> class="text-base-content/70">بروزرسانی رکورد</span>
+resources/views/components/help/content/maps.blade.php -> class="badge badge-primary badge-xs">پی‌سی</span></li>
+resources/views/livewire/map/map-dashboard.blade.php -> class="badge badge-primary gap-1">
+resources/views/livewire/map/map-dashboard.blade.php:600:                    'medium': 'badge-primary', 'low': 'badge-success',
+resources/views/livewire/users/index.blade.php -> class="badge badge-primary">{{ $unitName }}</span>
+resources/views/livewire/users/index.blade.php -> class="badge-primary" rounded />
+resources/views/livewire/profile/index.blade.php -> class="badge-sm badge-primary" />
+resources/views/livewire/partials/unit-tree-picker.blade.php -> class="badge badge-primary gap-1">
+resources/views/livewire/partials/unit-tree-picker.blade.php -> class="badge badge-primary gap-1">
+resources/views/livewire/activity-log/index.blade.php:236:                    'login' => 'badge-primary',
+== badge-success ==
+resources/views/components/help/content/hardware.blade.php -> class="badge badge-outline badge-success">رم ۱۶GB+</span>
+resources/views/components/help/content/hardware.blade.php -> class="badge badge-outline badge-success">روشن‌ها</span>
+resources/views/components/help/content/hardware.blade.php -> class="badge badge-outline badge-secondary">بازگردانی</span></li>
+resources/views/components/help/content/tickets.blade.php -> class="badge badge-success">کم</span></li>
+resources/views/components/help/content/tickets.blade.php -> class="badge badge-success">تکمیل شده (Completed)</span>
+resources/views/components/help/content/activity-log.blade.php -> class="text-base-content/70">ایجاد رکورد جدید</span>
+resources/views/components/help/content/dashboard.blade.php -> class="badge badge-success badge-sm">کم‌اهمیت</span> تیکت‌های اولویت پایین</li>
+resources/views/components/help/content/roles.blade.php -> class="text-base-content/70">مدیریت واحد</span>
+resources/views/components/help/content/hardware-import.blade.php -> class="badge badge-success badge-xs">جدید</span> - رکورد جدید ایجاد می‌شود</li>
+resources/views/components/help/content/maps.blade.php -> class="badge badge-primary badge-xs">پی‌سی</span></li>
+resources/views/livewire/map/map-dashboard.blade.php:600:                    'medium': 'badge-primary', 'low': 'badge-success',
+resources/views/livewire/users/index.blade.php -> class="$user->trashed() ? 'badge-error' : 'badge-success'"
+resources/views/livewire/kargozini/import-persons/import-persons.blade.php -> class="w-4 h-4" /> {{ $this->previewStats['new'] }} جدید</span>
+resources/views/livewire/kargozini/import-persons/import-persons.blade.php -> class="badge badge-success badge-xs">{{ $change['new'] }}</span>
+== badge-warning ==
+resources/views/components/help/content/hardware.blade.php -> class="badge badge-outline badge-warning">فقط SSD</span>
+resources/views/components/help/content/hardware.blade.php -> class="badge badge-outline badge-secondary">بازگردانی</span></li>
+resources/views/components/help/content/tickets.blade.php -> class="badge badge-success">کم</span></li>
+resources/views/components/help/content/tickets.blade.php -> class="badge badge-warning">ارجاع شده (Forwarded)</span>
+resources/views/components/help/content/activity-log.blade.php -> class="text-base-content/70">خروج کاربر</span>
+resources/views/components/help/content/dashboard.blade.php -> class="badge badge-warning badge-sm">عادی</span> تیکت‌های اولویت معمولی</li>
+resources/views/components/help/content/roles.blade.php -> class="text-base-content/70">عملیات روزانه</span>
+resources/views/components/help/content/hardware-import.blade.php -> class="badge badge-warning badge-xs">بروزرسانی</span> - رکورد موجود آپدیت می‌شود</li>
+resources/views/livewire/map/map-dashboard.blade.php -> class="badge badge-warning gap-1">
+resources/views/livewire/map/map-dashboard.blade.php:599:                    'urgent': 'badge-error', 'high': 'badge-warning', 'normal': 'badge-info',
+resources/views/livewire/kargozini/import-persons/import-persons.blade.php -> class="w-4 h-4" /> {{ $this->previewStats['updated'] }} بروزرسانی</span>
+resources/views/livewire/reports/todos.blade.php -> class="badge badge-warning badge-sm">در انتظار</span>
+resources/views/livewire/hardware/import-hardware/import-hardware.blade.php -> class="w-4 h-4" /> {{ $this->previewStats['updated'] }} بروزرسانی</span>
+resources/views/livewire/hardware/table.blade.php -> class="badge-warning" />
+== badge-error ==
+resources/views/components/help/content/hardware.blade.php -> class="badge badge-outline badge-secondary">بازگردانی</span></li>
+resources/views/components/help/content/tickets.blade.php -> class="badge badge-success">کم</span></li>
+resources/views/components/help/content/tickets.blade.php -> class="badge badge-error">رد شده (Rejected)</span>
+resources/views/components/help/content/activity-log.blade.php -> class="text-base-content/70">حذف رکورد</span>
+resources/views/components/help/content/dashboard.blade.php -> class="badge badge-error badge-sm">فوری</span> تیکت‌های اولویت بالا در انتظار بررسی</li>
+resources/views/components/help/content/dashboard.blade.php -> class="badge badge-error badge-sm">سررسید گذشته</span> تیکت‌های از موعد گذشته</li>
+resources/views/components/help/content/roles.blade.php -> class="text-base-content/70">دسترسی کامل</span>
+resources/views/components/help/content/hardware-import.blade.php -> class="badge badge-error badge-xs">بله</span></td><td>کد ملی پرسنل مالک دستگاه</td></tr>
+resources/views/components/help/content/hardware-import.blade.php -> class="badge badge-error badge-xs">بله</span></td><td>نام دستگاه (منحصر به فرد)</td></tr>
+resources/views/components/help/content/hardware-import.blade.php -> class="badge badge-error badge-xs">خطا</span> - مشکل در داده‌ها (پیام خطا نمایش داده می‌شود)</li>
+resources/views/livewire/map/map-dashboard.blade.php:599:                    'urgent': 'badge-error', 'high': 'badge-warning', 'normal': 'badge-info',
+resources/views/livewire/users/index.blade.php -> class="$user->trashed() ? 'badge-error' : 'badge-success'"
+resources/views/livewire/kargozini/import-persons/import-persons.blade.php -> class="w-4 h-4" /> {{ $this->previewStats['errors'] }} خطا</span>
+resources/views/livewire/kargozini/import-persons/import-persons.blade.php -> class="badge badge-error badge-xs">{{ $change['old'] ?? '—' }}</span>
+== badge-info ==
+resources/views/components/help/content/hardware.blade.php -> class="badge badge-outline badge-info">علامت‌دارها</span>
+resources/views/components/help/content/hardware.blade.php -> class="badge badge-outline badge-secondary">بازگردانی</span></li>
+resources/views/components/help/content/tickets.blade.php -> class="badge badge-success">کم</span></li>
+resources/views/components/help/content/tickets.blade.php -> class="badge badge-info">پذیرفته شده (Accepted)</span>
+resources/views/components/help/content/activity-log.blade.php -> class="text-base-content/70">ورود کاربر</span>
+resources/views/components/help/content/dashboard.blade.php -> class="badge badge-info badge-sm">میانگین حل (روز)</span> میانگین زمان حل تیکت‌های تکمیل شده</li>
+resources/views/components/help/content/roles.blade.php -> class="text-base-content/70">فقط مشاهده</span>
+resources/views/components/help/content/hardware-import.blade.php -> class="badge badge-info badge-xs">بدون تغییر</span> - داده‌ها یکسان است</li>
+resources/views/components/help/content/maps.blade.php -> class="badge badge-primary badge-xs">پی‌سی</span></li>
+resources/views/livewire/map/map-dashboard.blade.php:599:                    'urgent': 'badge-error', 'high': 'badge-warning', 'normal': 'badge-info',
+resources/views/livewire/users/index.blade.php -> class="badge-info" rounded/>
+resources/views/livewire/kargozini/import-persons/import-persons.blade.php -> class="w-4 h-4" /> {{ $this->previewStats['unchanged'] }} بدون تغییر</span>
+resources/views/livewire/hardware/import-hardware/import-hardware.blade.php -> class="w-4 h-4" /> {{ $this->previewStats['unchanged'] }} بدون تغییر</span>
+resources/views/livewire/hardware/audit-modal.blade.php:27:                                        'updated' => 'badge-info',
+== badge-neutral ==
+resources/views/livewire/hardware/table.blade.php -> class="badge-neutral" />
+resources/views/livewire/hardware/table.blade.php -> class="badge-neutral" />
+resources/views/livewire/hardware/audit-modal.blade.php:31:                                        default => 'badge-neutral',
+resources/views/livewire/search/index.blade.php:183:            'created' => 'badge-neutral',

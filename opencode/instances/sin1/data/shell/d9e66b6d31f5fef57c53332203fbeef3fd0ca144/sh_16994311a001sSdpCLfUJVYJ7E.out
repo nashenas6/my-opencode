@@ -1,0 +1,4 @@
+psql: warning: extra command-line argument "PGPASSWORD=<same-as-dev>" ignored
+ERROR:  syntax error at or near "SELECT1"
+ERROR:  syntax error at or near "SELECT1"
+LINE 1: SELECT1

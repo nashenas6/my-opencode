@@ -1,0 +1,6 @@
+16:                        <x-badge value="علامت" class="badge-warning" />
+18:                        <x-badge value="خاموش" class="badge-neutral" />
+20:                        <x-badge value="فعال" class="badge-success" />
+64:                <x-badge value="علامت" class="badge-warning" />
+66:                <x-badge value="خاموش" class="badge-neutral" />
+68:                <x-badge value="فعال" class="badge-success" />
