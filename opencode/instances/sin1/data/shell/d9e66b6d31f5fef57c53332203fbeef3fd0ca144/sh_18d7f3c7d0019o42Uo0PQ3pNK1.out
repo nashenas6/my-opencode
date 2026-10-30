@@ -1,0 +1,14 @@
+github.com
+  ✓ Logged in to github.com account nashenas6 (GH_TOKEN)
+  - Active account: true
+  - Git operations protocol: https
+  - Token: ghp_************************************
+  - Token scopes: 'audit_log', 'notifications', 'project', 'read:network_configurations', 'read:org', 'read:repo_hook', 'read:user', 'repo', 'workflow', 'write:discussion'
+
+  ✓ Logged in to github.com account nashenas6 (/home/runner/.config/gh/hosts.yml)
+  - Active account: false
+  - Git operations protocol: https
+  - Token: ghp_************************************
+  - Token scopes: 'audit_log', 'notifications', 'project', 'read:network_configurations', 'read:org', 'read:repo_hook', 'read:user', 'repo', 'workflow', 'write:discussion'
+---
+cannot add: string ("asgarimehdi/h-dashboard | ") and object ({"admin":false,"maintain" ...})

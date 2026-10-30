@@ -1,0 +1,2 @@
+"mutation {\n  addDiscussionComment(input: {discussionId: \"D_kwDOOLHV784AqrX8\", body: \"## 🧪 تحلیل و بررسی فنی — وضعیت یافته‌ها و بازبینی مستقیم source\\n\\n> نگارش من: تحلیل و بررسی فنی مستقیم روی این Discussion، بر پایهٔ خواندشدن source کد (Laravel 13 / Livewire 4 / MaryUI / PostGIS) و cross-chec
+{"data":{"addDiscussionComment":{"comment":{"id":"DC_kwDOOLHV784BJnO0"}}}}

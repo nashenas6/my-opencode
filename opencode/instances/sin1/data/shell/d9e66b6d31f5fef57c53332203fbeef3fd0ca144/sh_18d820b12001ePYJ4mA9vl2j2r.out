@@ -1,0 +1,1 @@
+{"errors":[{"path":["mutation"],"extensions":{"code":"variableRequiresValidType","typeName":"CreateDiscussionCommentInput","variableName":"input"},"locations":[{"line":1,"column":10}],"message":"CreateDiscussionCommentInput isn't a defined input type (on $input)"}]}gh: CreateDiscussionCommentInput isn't a defined input type (on $input)

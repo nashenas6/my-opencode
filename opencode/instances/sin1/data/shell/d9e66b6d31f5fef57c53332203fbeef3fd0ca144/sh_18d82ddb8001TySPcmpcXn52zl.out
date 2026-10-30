@@ -1,0 +1,5 @@
+{
+  "query": "mutation {\n  addDiscussionComment(input: {discussionId: \"D_kwDOOLHV784AqrX8\", body: \"test graphql post 3\"}) {\n    comment { id }\n  }\n}"
+}
+
+{"data":{"addDiscussionComment":{"comment":{"id":"DC_kwDOOLHV784BJnOv"}}}}
