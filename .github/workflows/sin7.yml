@@ -23,6 +23,21 @@ on:
         required: false
         default: ""
         type: string
+      custom_preset:
+        description: "Custom preset name (must exist in the CUSTOM_KEYS secret JSON; empty = current Zen setup)"
+        required: false
+        default: ""
+        type: string
+      custom_base_url:
+        description: "Custom preset base URL, e.g. https://api.example.com (empty = current Zen setup)"
+        required: false
+        default: ""
+        type: string
+      custom_model:
+        description: "Custom preset model id, e.g. vendor/model (empty = current Zen setup)"
+        required: false
+        default: ""
+        type: string
 
 
 jobs:
@@ -405,6 +420,63 @@ jobs:
           print(f"NVIDIA account '{account}' resolved for this run only")
           PYEOF_NV
 
+      # 12d. Per-run Custom preset choice (Remote-Op dispatch inputs only).
+      #     Runs ONLY when a dispatch carried a preset name; a plain
+      #     dispatch (or any other trigger) skips it and the run keeps
+      #     the current Zen setup. Same shape as steps 12b/12c: the
+      #     token is NEVER sent in the dispatch — it is read here from
+      #     the CUSTOM_KEYS secret (one JSON object, preset name ->
+      #     token, set by the repo owner), masked, and exported via
+      #     $GITHUB_ENV so step 13 and the `opencode serve` process
+      #     inherit CUSTOM_API_KEY from the environment. §4 writes the
+      #     `custom` provider block (OpenAI-compatible, the preset's
+      #     baseURL) into opencode.json for this run only, reading the
+      #     key from that variable — no key is written into the
+      #     config. Missing secret / bad JSON / unknown preset /
+      #     missing base URL / missing model all fail fast, with the
+      #     preset name only in the message — never the token or the
+      #     JSON.
+      - name: 12d. Resolve Custom preset for this run only
+        if: inputs.custom_preset != ''
+        env:
+          CUSTOM_KEYS: ${{ secrets.CUSTOM_KEYS }}
+          CUSTOM_PRESET: ${{ inputs.custom_preset }}
+          CUSTOM_BASE_URL: ${{ inputs.custom_base_url }}
+          CUSTOM_MODEL: ${{ inputs.custom_model }}
+        run: |
+          python3 - <<'PYEOF_CU'
+          import json, os, sys
+          keys_raw = os.environ.get("CUSTOM_KEYS", "")
+          if not keys_raw:
+              print("::error::CUSTOM_KEYS secret is not set on this repo — "
+                    "set it (JSON: preset name -> token) or dispatch without a Custom preset")
+              sys.exit(1)
+          try:
+              keys = json.loads(keys_raw)
+          except Exception:
+              print("::error::CUSTOM_KEYS is not valid JSON")
+              sys.exit(1)
+          preset = os.environ.get("CUSTOM_PRESET", "")
+          base_url = os.environ.get("CUSTOM_BASE_URL", "")
+          model = os.environ.get("CUSTOM_MODEL", "")
+          if not base_url:
+              print("::error::custom_base_url is empty — dispatch with a preset, its base URL and a model")
+              sys.exit(1)
+          if not model:
+              print("::error::custom_model is empty — dispatch with both a preset and a model")
+              sys.exit(1)
+          token = keys.get(preset) if isinstance(keys, dict) else None
+          if not isinstance(token, str) or not token:
+              print(f"::error::Custom preset '{preset}' not found in CUSTOM_KEYS")
+              sys.exit(1)
+          print("::add-mask::" + token)
+          with open(os.environ["GITHUB_ENV"], "a") as f:
+              f.write("CUSTOM_API_KEY=" + token + "\n")
+              f.write("CUSTOM_BASE_URL=" + base_url + "\n")
+              f.write("CUSTOM_MODEL=" + model + "\n")
+          print(f"Custom preset '{preset}' resolved for this run only")
+          PYEOF_CU
+
       - name: 13. Install OpenCode V2, restore state, configure MCPs + Superpowers plugin & start serve
         env:
           OPENCODE_SERVER_PASSWORD: ${{ secrets.RUNNER_PASSWORD }}
@@ -548,8 +620,9 @@ jobs:
           # only for an NVIDIA run; a plain dispatch leaves whatever
           # provider block the restored config already had untouched
           # (and the model resolution below restores the Zen model).
-          # When BOTH overrides are somehow set, NVIDIA wins — the
-          # Run dialog only ever sends one provider's inputs.
+          # When several overrides are somehow set, Custom wins,
+          # then NVIDIA — the Run dialog only ever sends one
+          # provider's inputs.
           # The NIM id itself usually contains a slash (e.g.
           # nvidia/nemotron-3-ultra-550b-a55b), so the OpenCode ref
           # is nvidia/<NIM id> — three segments. A value already in
@@ -559,6 +632,33 @@ jobs:
           if _nv_id.startswith("nvidia/nvidia/"):
               _nv_id = _nv_id[len("nvidia/"):]
           _nv_model = ("nvidia/" + _nv_id) if _nv_id else ""
+          # Per-run Custom preset override (step 12d exported
+          # CUSTOM_MODEL + CUSTOM_BASE_URL only when the dispatch
+          # carried a preset name). Like NVIDIA it needs an explicit
+          # provider block: an OpenAI-compatible provider pointing
+          # at the preset's baseURL, reading its key from
+          # CUSTOM_API_KEY in the environment (step 12d), with the
+          # chosen model registered in its `models` map. The
+          # OpenCode ref is custom/<model-id>; a value already in
+          # that form has its one leading custom/ stripped back to
+          # the id. The baseURL is normalized here too (a manual
+          # dispatch may send it raw): trailing slashes stripped,
+          # a trailing /v1/models trimmed to /v1, /v1 appended
+          # unless already there. The block is written only for a
+          # Custom run; a plain dispatch leaves whatever provider
+          # block the restored config already had untouched (and
+          # the model resolution below restores the Zen model).
+          _cu_raw = os.environ.get("CUSTOM_MODEL", "").strip()
+          _cu_base = os.environ.get("CUSTOM_BASE_URL", "").strip()
+          _cu_id = _cu_raw[len("custom/"):] \
+              if _cu_raw.startswith("custom/") else _cu_raw
+          _cu_model = ("custom/" + _cu_id) if _cu_id else ""
+          if _cu_base:
+              _cu_base = _cu_base.rstrip("/")
+              if _cu_base.endswith("/v1/models"):
+                  _cu_base = _cu_base[:-len("/models")]
+              if not _cu_base.endswith("/v1"):
+                  _cu_base = _cu_base + "/v1"
           # The default model is PER-INSTANCE and comes from the
           # opencode/default-models.txt file in this repo: one full
           # model id per line (# comments and blank lines ignored).
@@ -598,7 +698,18 @@ jobs:
               else:
                   break
           _idx = int(_num) - 1 if _num else 0
-          if _nv_model:
+          if _cu_model and _cu_base:
+              _prov = cfg.setdefault("provider", {})
+              _custom = _prov.setdefault("custom", {})
+              _custom["npm"] = "@ai-sdk/openai-compatible"
+              _custom["name"] = "Custom"
+              _custom_opts = _custom.setdefault("options", {})
+              _custom_opts["baseURL"] = _cu_base
+              _custom_opts["apiKey"] = "{env:CUSTOM_API_KEY}"
+              _custom.setdefault("models", {}).setdefault(
+                  _cu_id, {"name": _cu_id})
+              cfg["model"] = _cu_model
+          elif _nv_model:
               _nim_id = _nv_id
               _prov = cfg.setdefault("provider", {})
               _nvidia = _prov.setdefault("nvidia", {})
@@ -753,17 +864,23 @@ jobs:
                                 ("nemotron", "opencode/nemotron-3.5-lightning-free"),
                                 ("glm", "opencode/glm-5.3-flash-free")):
               councillors.setdefault(cname, {})["model"] = cmodel
-          # Per-run provider override (same NVIDIA_MODEL /
-          # OPENROUTER_MODEL as §4, NVIDIA checked first): EVERY slim
-          # seat — agents, council and councillors — on the chosen
-          # model for this run only, and the preset forced to "free"
-          # so these seats are the ones actually used. The runner's
-          # slim config is never committed back, so the next plain
-          # dispatch restores the free-preset seats above.
+          # Per-run provider override (same CUSTOM_MODEL /
+          # NVIDIA_MODEL / OPENROUTER_MODEL as §4, Custom checked
+          # first, then NVIDIA): EVERY slim seat — agents, council
+          # and councillors — on the chosen model for this run
+          # only, and the preset forced to "free" so these seats
+          # are the ones actually used. The runner's slim config
+          # is never committed back, so the next plain dispatch
+          # restores the free-preset seats above.
+          _cu_raw = os.environ.get("CUSTOM_MODEL", "").strip()
           _nv_raw = os.environ.get("NVIDIA_MODEL", "").strip()
           _or_raw = os.environ.get("OPENROUTER_MODEL", "").strip()
           _override = ""
-          if _nv_raw:
+          if _cu_raw:
+              _cu_id = _cu_raw[len("custom/"):] \
+                  if _cu_raw.startswith("custom/") else _cu_raw
+              _override = "custom/" + _cu_id
+          elif _nv_raw:
               _nv_id = _nv_raw[len("nvidia/"):] \
                   if _nv_raw.startswith("nvidia/nvidia/") else _nv_raw
               _override = "nvidia/" + _nv_id
